@@ -70,15 +70,15 @@ function renderUTCTime() {
 function renderBackground() {
     let hours = (new Date()).getHours();
 
-    // if time between 06:00 and 17:00 its day
-    if (hours > 6 && hours < 17) {
+    // if time between 12:00 and 18:00 its day
+    if (hours > 12 && hours < 18) {
         simulateTime("day");
-    } else if (hours > 17 && hours < 20) {
-        // if time between 17:00 and 20:00 its dawn
-        simulateTime("dawn");
-    } else {
-        // between 20:00 and 06:00 night
+    } else if (hours > 18 && hours < 6) {
+        // between 18:00 and 06:00 night
         simulateTime("night");
+    } else {
+        // if time between 06:00 and 12:00 its dawn
+        simulateTime("dawn");
     }
 }
 
